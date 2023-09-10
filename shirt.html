@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Look</title>
+    <style>
+        
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+    
+        #nav {
+           
+            background-color: grey;
+            height: 60px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header h1{
+            
+            padding-left: 20px;
+        }
+       
+        header ul li{
+            display: inline;
+            position: relative;
+            margin: 20px;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 1s;
+        }
+        li:hover{
+            cursor: pointer;
+        }
+        header ul li::after{
+            content:'';
+            position: absolute;
+            height: 3px;
+            width: 0;
+            background-color:white;
+            left: 0;
+            top: 45px;
+            transition: 1s;
+            
+        }
+        header ul li:hover::after{
+            width: 100%;
+        }
+        .img-content{
+                background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(back.jpg);
+                height: 80vh;
+                width: 100%;
+                background-position: center;
+                background-size:cover;
+                padding-top: 8%;
+                padding-left: 4%;
+                color: white;
+        }
+        .img-content button{
+            margin-top: 40px;
+            background-color: transparent;
+            border: 2px solid white;
+            width: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .img-content h4{
+            margin: 20px;
+            font-size: 26px;
+        }
+        .img-content h1{
+            margin: 30px;
+            line-height:70px;
+            font-size: 45px;
+        }
+        .container{
+            width: 100%;
+            margin-top: 60px;
+            
+        }
+        #div{
+            width: 100%;
+            height: 20px;
+            background-color: rgb(163, 163, 163);
+        }
+        #product{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-gap:40px;
+        }
+        .product{
+            background-color: rgba(231, 231, 231, 0.701);
+            border-radius:10px;
+            padding: 20px;
+            text-align:center;
+            line-height:33px;
+            font-size: 20px;
+            
+        }
+      
+       .product img{
+         width: 100%;
+         object-fit: cover;
+         border-radius:5px;
+         margin-bottom:8px;
+         padding-bottom:8px;
+        
+        }
+        
+        h2{
+            margin-bottom: 5px;
+        }
+        button{
+            background-color: green;
+            color: white;
+            padding: 15px 20px;
+            margin: 10px;
+            font-size: 19px;
+            width: 180px;
+            outline: none;
+            border: none;
+            transition: .7s;
+        }
+        button:hover{
+            width: 230px;
+        }
+        footer{
+            display:flex;
+            width: 100%;
+            height: 300px;
+            background-color:rgba(40,40,40);
+            color: white;
+            padding-top: 100px;
+             justify-content: space-evenly;
+             margin-top: 30px;
+        }
+        .footer li{
+            list-style:none;
+        }
+        h3{
+            
+            position: relative;
+            margin: 20px;
+           
+        }
+         h3::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color:red;
+            left: 0;
+            top: 30px;
+        }
+        
+        footer img{
+            margin: 20px;
+        }
+
+        .follow h3::after{
+            width: 80px;
+        }
+    
+        .footer li{
+            margin: 20px;
+            transition:0.5s;
+        }
+
+        .footer ul{
+            margin-top:20px;
+        }
+
+        .footer ul li:hover{
+            margin-left:40px;
+        }
+        .sec{
+            display: flex;
+             justify-content: space-between;
+        }
+       
+        .sec h1{
+            padding-left: 700px;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+        .sec h4{
+            margin-top: 30px;
+        }
+        .sec h4:hover{
+            cursor: pointer;
+        }
+        #h1{
+            text-align: center;
+            margin:20px;
+            color: black;
+        }
+        h2{
+            color: black;
+        }
+        .about{
+           margin: 30px;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+        }
+        .about img{
+            object-fit:cover;
+            height: 600px;
+            margin-left: 8%;
+         
+        }
+        #about h1, p,li{
+            color: black;
+            font-size: 30px;
+        }
+
+        #about{
+            margin-right: 8%;
+           position: relative;
+        }
+        #about::before{
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: red;
+            left: -4%;
+        }
+
+        #about p{
+            margin-bottom:10px;
+        }
+        #about ul{
+            margin-left: 70px;
+            margin-top: 20px;
+        }
+        .footer li{
+            color: white;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="nav">
+            <h1>High Look</h1>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contacts</li>
+                <li>our services</li>
+            </ul>
+        </div>
+    </header>
+    <div class="img-content">
+         <h4>Garmen Textile Company</h4>
+         <h1>You can never go wrong <br> with our quality</h1>
+         <h4>40 Years of experience in manufacturing garments</h4>
+      <a href="#product"> <button>View designs</button></a>  
+         <button>Order Now</button>
+    </div>
+    <div class="container">
+
+        <h1 id="h1">
+            Our Products
+        </h1>
+        <div id="product">
+            
+            <div class="product">
+                <h2>For men</h2>
+                <img src="m.webp" alt="yellow">
+                
+                <button>View Designs</button>
+            </div>
+            <div class="product">
+                <h2>For women</h2>
+                <img src="w.webp" alt="yellow">
+                
+
+                <button>View Designs</button>
+            </div>
+            <div class="product">
+                <h2>For Kids</h2>
+                <img src="k.webp" alt="yellow">
+                
+                
+                <button>View Designs</button>
+            </div>
+          
+        </div> <!--id product-->
+
+        <div class="about">
+            <img src="about.jpg" alt="about">
+            <div id="about">
+                <h1>About us</h1>
+                <p>We ensure the quality of the product and the <br> satisfaction of  the each and every customer</p>
+                <h1>Our Moto</h1>
+                <p>To bring the quality for a offordable price</p>
+                <h1>Why to Choose us?</h1>
+                <ul>
+                    <li>Handwork</li>
+                    <li>Good Quality</li>
+                    <li>offordable price</li>
+                    <li>Premium feel</li>
+                    <li>Shipping all over India</li>
+                </ul>
+            </div>
+        </div>
+      
+      
+        
+    </div> <!--div for container-->
+
+    <footer>
+        <div class="follow footer">
+            <h3>Follow us</h3>
+            <img src="wh.png" alt="wh"/>
+            <img src="fb.png" alt="wh"/>
+            <img src="ig.png" alt="wh"/>
+            <img src="tw.png" alt="wh"/>
+        </div> <!--follow div-->
+
+        <div class="our-company footer">
+                  <h3>Our company</h3>
+                  <ul>
+                    <li>About us</li>
+                    <li>Our mission</li>
+                    <li>Privacy policy</li>
+                    <li>User agreement</li>
+                  </ul>
+        </div> <!--our-company-->
+            
+        <div class="get-help footer">
+                   <h3>Get help</h3>
+                   <ul><li>
+                    Return
+                   </li>
+                <li>
+                    Cancel order
+                </li>
+                <li>
+                    Replacement
+                </li>
+                <li>
+                    Contact us
+                </li>
+                </ul>
+        </div> <!--get-help-->
+
+        <div class="online-shop footer">
+                   <h3>Online shopping</h3>
+                   <ul>
+                    <li>
+                        T-shirt
+                    </li>
+                    <li>
+                        Casual shirt
+                    </li>
+                    <li>
+                        Party wears
+                    </li>
+                    <li>
+                        Formals
+                    </li>
+                   </ul>
+        </div><!--online-shop-->
+    </footer>
+</body>
+</html>
